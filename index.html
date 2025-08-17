@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti, mi amor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+        
+        :root {
+            --primary: #93c5fd;
+            --secondary: #60a5fa;
+            --accent: #3b82f6;
+            --soft-pink: #fbcfe8;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        .heart {
+            animation: pulse 2s infinite;
+            color: var(--accent);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .polaroid {
+            background: white;
+            padding: 1rem 1rem 3rem 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+        }
+        
+        .stationery {
+            background: #fff;
+            padding: 2rem;
+            border-left: 4px solid var(--accent);
+            position: relative;
+        }
+        
+        .stationery:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 40px;
+            right: 0;
+            height: 100%;
+            border-left: 1px dashed rgba(59, 130, 246, 0.3);
+        }
+        
+        .highlight {
+            animation: highlight 1.5s ease;
+        }
+        
+        @keyframes highlight {
+            0% { background-color: transparent; }
+            20% { background-color: rgba(251, 207, 232, 0.5); }
+            100% { background-color: transparent; }
+        }
+    </style>
+</head>
+<body class="min-h-screen gradient-bg">
+    
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden z-0">
+        <div id="hearts-container" class="relative w-full h-full"></div>
+    </div>
+    
+    
+    <div class="relative z-10 max-w-5xl mx-auto px-4 py-12">
+        
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 font-playfair" style="font-family: 'Playfair Display', serif;">
+                Para ti, <span class="text-[#2563eb]">mi amor</span> 
+                <span class="heart text-4xl">❤</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-6">
+                Esta página fue creada con todo mi amoch para recordarte lo especial que eres para mí.
+            </p>
+            <a href="#love-letter" id="majitoHeaderBtn" class="inline-block bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-6 rounded-full text-base transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Querida Majito...
+            </a>
+        </header>
+        
+        
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-16 text-center border border-blue-50">
+            <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-[#2563eb]">Nuestro tiempo juntos</h2>
+            <div id="counter" class="grid grid-cols-4 gap-4">
+                <div class="bg-blue-50 rounded-lg p-4 border border-blue-100">
+                    <div class="text-3xl font-bold text-[#2563eb]" id="years">0</div>
+                    <div class="text-slate-500">Años</div>
+                </div>
+                <div class="bg-blue-50 rounded-lg p-4 border border-blue-100">
+                    <div class="text-3xl font-bold text-[#2563eb]" id="months">0</div>
+                    <div class="text-slate-500">Meses</div>
+                </div>
+                <div class="bg-blue-50 rounded-lg p-4 border border-blue-100">
+                    <div class="text-3xl font-bold text-[#2563eb]" id="days">0</div>
+                    <div class="text-slate-500">Días</div>
+                </div>
+                <div class="bg-blue-50 rounded-lg p-4 border border-blue-100">
+                    <div class="text-3xl font-bold text-[#2563eb]" id="hours">0</div>
+                    <div class="text-slate-500">Horas</div>
+                </div>
+            </div>
+            <p class="mt-6 text-slate-600">Cada segundo a tu lado es un regalo</p>
+        </section>
+        
+        
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-semibold mb-8 text-center text-[#2563eb]">
+                Razones por las que te amo
+                <span class="heart text-xl ml-2">❤</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6 hover:bg-blue-50 transition-colors duration-300 border border-blue-50">
+                    <div class="text-[#3b82f6] text-2xl mb-3">✨</div>
+                    <h3 class="font-semibold text-lg mb-2">Tu sonrisa</h3>
+                    <p class="text-slate-600">Ilumina mis días más oscuros y me hace creer que todo será mejor.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 hover:bg-blue-50 transition-colors duration-300 border border-blue-50">
+                    <div class="text-[#3b82f6] text-2xl mb-3">💖</div>
+                    <h3 class="font-semibold text-lg mb-2">Tu corazón</h3>
+                    <p class="text-slate-600">Tan grande que siempre encuentra espacio para todo, especialmente para mí.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 hover:bg-blue-50 transition-colors duration-300 border border-blue-50">
+                    <div class="text-[#3b82f6] text-2xl mb-3">🌟</div>
+                    <h3 class="font-semibold text-lg mb-2">Tu apoyo</h3>
+                    <p class="text-slate-600">Nunca dudo que estarás ahí cuando te necesite, en las buenas y en las malas.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-semibold mb-8 text-center text-[#2563eb]">Nuestros recuerdos</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="polaroid">
+                    <img src="./Imagen de WhatsApp 2025-07-23 a las 18.49.15_f431158a.jpg" alt="" class="w-full h-auto mb-2">
+                    <p class="text-center italic text-slate-700">Nustra primer foto juntos💗</p>
+                </div>
+                <div class="polaroid">
+                    <img src="./Imagen de WhatsApp 2025-07-25 a las 21.18.31_d8cf05ec.jpg" alt="" class="w-full h-auto mb-2">
+                    <p class="text-center italic text-slate-700">La primera vez q fui a tu casa🙈</p>
+                </div>
+                <div class="polaroid">
+                    <img src="./Imagen de WhatsApp 2025-08-10 a las 12.51.16_88538a79.jpg" alt="" class="w-full h-auto mb-2">
+                    <p class="text-center italic text-slate-700">Simplemente eres hermosa❤️</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section id="love-letter" class="bg-white rounded-xl shadow-lg p-8 mb-12 border border-blue-50">
+            <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-center text-[#2563eb]">Mi carta para ti</h2>
+            <div class="max-w-2xl mx-auto">
+                <p class="text-lg text-slate-700 mb-4">Querida Majito,</p>
+                <div id="letterContent">
+                    <p class="text-lg text-slate-700 mb-4">
+                        No hay palabras suficientes para expresar lo que siento por ti. Cada día a tu lado es una bendición que aprecio profundamente. 
+                    </p>
+                    <p class="text-lg text-slate-700 mb-4">
+                        Te amo grandemente asi muchote, por tu manera única de hacer que todo parezca mejor, por la paciencia que tienes conmigo y por ese amor incondicional que me das.
+                    </p>
+                    <p class="text-lg text-slate-700 mb-4">
+                        Prometo seguir esforzándome cada día para ser mejor y hacerte feliz, porque tu felicidad es la mía.
+                    </p>
+                </div>
+                <p class="text-lg text-slate-700">
+                    Con todo mi amor,
+                    <span class="block font-semibold mt-4 text-[#2563eb]">Tu nano</span>
+                </p>
+            </div>
+        </section>
+        
+        
+        <section class="text-center">
+            <button id="loveButton" class="bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                mensaje especial
+            </button>
+            <div id="loveMessage" class="mt-6 hidden">
+                <p class="text-xl text-[#2563eb] font-semibold animate-bounce">¡Te amo 3 millones❤</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        
+        const anniversaryDate = new Date('2025-07-09'); 
+
+        
+        
+        function createFloatingElements() {
+            const container = document.getElementById('hearts-container');
+            const elementsCount = 40;
+            const symbols = ['❤', '✿', '★', '✦'];
+            
+            for (let i = 0; i < elementsCount; i++) {
+                const element = document.createElement('div');
+                const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+                element.innerHTML = randomSymbol;
+                
+                
+                const colorClass = Math.random() > 0.7 ? 'text-pink-300' : 'text-blue-200';
+                
+                element.className = `absolute ${colorClass} opacity-70 floating`;
+                element.style.left = `${Math.random() * 100}%`;
+                element.style.top = `${Math.random() * 100}%`;
+                element.style.fontSize = `${Math.random() * 10 + 10}px`;
+                element.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                element.style.animationDelay = `${Math.random() * 2}s`;
+                container.appendChild(element);
+            }
+        }
+        
+        
+        function updateCounter() {
+            const now = new Date();
+            const diff = now - anniversaryDate;
+            
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+            const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            
+            document.getElementById('years').textContent = years;
+            document.getElementById('months').textContent = months;
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+        }
+        
+        
+        function setupLoveButton() {
+            const button = document.getElementById('loveButton');
+            const message = document.getElementById('loveMessage');
+            
+            button.addEventListener('click', () => {
+                message.classList.toggle('hidden');
+                if (!message.classList.contains('hidden')) {
+                    setTimeout(() => {
+                        message.classList.add('hidden');
+                    }, 3000);
+                }
+            });
+        }
+        
+        
+        function setupMajitoButton() {
+            const btn = document.getElementById('majitoHeaderBtn');
+            const letterSection = document.getElementById('love-letter');
+            const letterContent = document.getElementById('letterContent');
+            
+            btn.addEventListener('click', (e) => {
+                
+                const randomLetter = majitoLetters[Math.floor(Math.random() * majitoLetters.length)];
+                
+                letterContent.innerHTML = `<p class="text-lg text-slate-700 mb-4">${randomLetter}</p>`;
+                
+                
+                setTimeout(() => {
+                    letterSection.classList.add('highlight');
+                    setTimeout(() => {
+                        letterSection.classList.remove('highlight');
+                    }, 1500);
+                }, 300);
+            });
+        }
+        
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            createFloatingElements();
+            updateCounter();
+            setupLoveButton();
+            setupMajitoButton();
+            
+            
+            setInterval(updateCounter, 3600000);
+        });
+    </script>
+</body>
+</html>
